@@ -1,24 +1,26 @@
 package com.myprojects.SpringLearningFromAPI;
 
-import junit.framework.TestCase;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-public class AppTest extends TestCase {
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations={"classpath:Beans.xml"})
+public class AppTest{
 
-	static App app;
-
-	@Override
-	protected void setUp() {
-		if(app==null){
-			app = new App();
-		}
-	}
-
-	public void test() {
+	@Autowired
+	private App app;
+	
+	@Test
+	public void testFunction() {
 		app.addToList();
 		System.out.println(app.getPojo().getMyList());
 	}
 
-	public void test2() {
+	@Test
+	public void testFunction2() {
 		app.addToList2();
 		System.out.println(app.getPojo().getMyList());
 	}

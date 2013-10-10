@@ -13,7 +13,6 @@ import com.myprojects.SpringLearningFromAPI.domain.POJO;
  */
 public class App 
 {
-	private ApplicationContext context; 
 	private POJO pojo;
             
 	public POJO getPojo() {
@@ -26,8 +25,6 @@ public class App
 
 	public App() {
 		super();
-		context = new ClassPathXmlApplicationContext("Beans.xml");
-		this.pojo = (POJO)context.getBean("pojo");
 	}
 	
 	public void addToList(){
