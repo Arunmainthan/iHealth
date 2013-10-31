@@ -23,7 +23,7 @@ public class App {
 
 	public void listPets() {
 		// TODO Auto-generated method stub
-		 List<Pet> listPets = petService.listPets();
+		 List<Pet> listPets = petService.getPets();
 		 for (Pet pet : listPets) {
 			System.out.println(pet);
 		}

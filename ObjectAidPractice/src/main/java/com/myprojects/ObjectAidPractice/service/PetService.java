@@ -6,10 +6,12 @@ import com.myprojects.ObjectAidPractice.domain.Pet;
 
 public interface PetService {
 
-	void addPet(Pet animal);
+	void addPet(Pet pet);
 
-	void editPet(Pet dog);
+	void editPet(Pet newPet);
 
-	List<Pet> listPets();
+	public List<Pet> getPets();
+
+	public void setPets(List<Pet> pets);
 
 }

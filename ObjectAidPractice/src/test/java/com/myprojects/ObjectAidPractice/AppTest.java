@@ -10,18 +10,29 @@ import org.mockito.Mockito;
 import com.myprojects.ObjectAidPractice.domain.Dog;
 import com.myprojects.ObjectAidPractice.domain.Pet;
 import com.myprojects.ObjectAidPractice.service.PetService;
+import com.myprojects.ObjectAidPractice.service.PetServiceImpl;
 
 public class AppTest extends TestCase {
 
 	
-	PetService petService = Mockito.mock(PetService.class);
+	PetService petService = new PetServiceImpl();
 	App app = new App();
-	public void testListPets(){
-		//List<Pet> listPets = app.listPets();
-		Pet[] pet = new Dog[]{new Dog(1,"puppy")};
-		List<Pet> list = Arrays.asList(pet);
-		Mockito.when(petService.listPets()).thenReturn(list);
+	
+	@Override
+	protected void setUp(){
 		app.setPetService(petService);
-		app.listPets();
+	}
+	
+	public void testListPets(){
+		
+		Pet dog = new Dog(1,"puppy");
+		petService.addPet(dog);
+		assertTrue(petService.getPets().size()>0);
+		
+		Pet newDog = new Dog(1,"tommy");
+		petService.editPet(newDog);
+		assertTrue(petService.getPets().get(0).getPetName().equals("tommy"));
+		
+
 	}
 }

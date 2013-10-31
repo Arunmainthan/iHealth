@@ -25,7 +25,7 @@
   <interface id="3" language="java" name="com.myprojects.ObjectAidPractice.domain.Pet" project="ObjectAidPractice" 
     file="/ObjectAidPractice/src/main/java/com/myprojects/ObjectAidPractice/domain/Pet.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="907" y="124"/>    
+    <position height="-1" width="-1" x="1075" y="96"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -35,7 +35,7 @@
   <class id="4" language="java" name="com.myprojects.ObjectAidPractice.domain.Dog" project="ObjectAidPractice" 
     file="/ObjectAidPractice/src/main/java/com/myprojects/ObjectAidPractice/domain/Dog.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1372" y="372"/>    
+    <position height="-1" width="-1" x="1483" y="383"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -45,25 +45,39 @@
   <class id="5" language="java" name="com.myprojects.ObjectAidPractice.AppTest" project="ObjectAidPractice" 
     file="/ObjectAidPractice/src/test/java/com/myprojects/ObjectAidPractice/AppTest.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="449" y="402"/>    
+    <position height="-1" width="-1" x="473" y="405"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <realization id="6">    
-    <end type="SOURCE" refId="4"/>    
+  <class id="6" language="java" name="com.myprojects.ObjectAidPractice.domain.PetImpl" project="ObjectAidPractice" 
+    file="/ObjectAidPractice/src/main/java/com/myprojects/ObjectAidPractice/domain/PetImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1476" y="119"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <realization id="7">    
+    <end type="SOURCE" refId="6"/>    
     <end type="TARGET" refId="3"/>  
   </realization>  
-  <association id="7">    
+  <association id="8">    
     <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="8" name="petService"/>      
-      <multiplicity id="9" minimum="0" maximum="1"/>    
+      <attribute id="9" name="petService"/>      
+      <multiplicity id="10" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="2" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
+  <generalization id="11">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="6"/>  
+  </generalization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    
