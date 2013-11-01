@@ -4,7 +4,7 @@
   <class id="1" language="java" name="com.myprojects.ObjectAidPractice.App" project="ObjectAidPractice" 
     file="/ObjectAidPractice/src/main/java/com/myprojects/ObjectAidPractice/App.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="138" y="141"/>    
+    <position height="-1" width="-1" x="145" y="517"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -15,7 +15,7 @@
     project="ObjectAidPractice" 
     file="/ObjectAidPractice/src/main/java/com/myprojects/ObjectAidPractice/service/PetService.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="465" y="143"/>    
+    <position height="-1" width="-1" x="437" y="512"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -25,7 +25,7 @@
   <interface id="3" language="java" name="com.myprojects.ObjectAidPractice.domain.Pet" project="ObjectAidPractice" 
     file="/ObjectAidPractice/src/main/java/com/myprojects/ObjectAidPractice/domain/Pet.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1075" y="96"/>    
+    <position height="-1" width="-1" x="698" y="510"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -35,7 +35,7 @@
   <class id="4" language="java" name="com.myprojects.ObjectAidPractice.domain.Dog" project="ObjectAidPractice" 
     file="/ObjectAidPractice/src/main/java/com/myprojects/ObjectAidPractice/domain/Dog.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1483" y="383"/>    
+    <position height="-1" width="-1" x="693" y="915"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -45,7 +45,7 @@
   <class id="5" language="java" name="com.myprojects.ObjectAidPractice.AppTest" project="ObjectAidPractice" 
     file="/ObjectAidPractice/src/test/java/com/myprojects/ObjectAidPractice/AppTest.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="473" y="405"/>    
+    <position height="-1" width="-1" x="140" y="751"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -55,11 +55,11 @@
   <class id="6" language="java" name="com.myprojects.ObjectAidPractice.domain.PetImpl" project="ObjectAidPractice" 
     file="/ObjectAidPractice/src/main/java/com/myprojects/ObjectAidPractice/domain/PetImpl.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1476" y="119"/>    
+    <position height="-1" width="-1" x="697" y="718"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
   <realization id="7">    
