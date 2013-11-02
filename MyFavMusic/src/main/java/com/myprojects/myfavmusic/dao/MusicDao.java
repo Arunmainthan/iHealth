@@ -16,5 +16,9 @@ public interface MusicDao {
 	 */
 	public void addSong(Song song);
 
+	/**
+	 * @param spec
+	 * @return list of songs matching the search criteria
+	 */
 	public List<Song> listAllSongsBySpec(SongSpec spec);
 }

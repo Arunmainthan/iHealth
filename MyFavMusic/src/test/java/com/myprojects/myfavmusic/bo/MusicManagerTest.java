@@ -11,6 +11,7 @@ import org.mockito.Mockito;
 import com.myprojects.myfavmusic.bo.impl.MusicManagerImpl;
 import com.myprojects.myfavmusic.dao.MusicDao;
 import com.myprojects.myfavmusic.domain.Song;
+import com.myprojects.myfavmusic.domain.SongSpec;
 
 /**
  * @author arun Unit Test for manager
@@ -29,13 +30,13 @@ public class MusicManagerTest extends TestCase {
 		fail("Not yet implemented");
 	}
 
-	public void testListAllSongs() {
+	public void testListAllSongsBySpec() {
 		List<Song> list = new ArrayList<Song>();
 		Song song = new Song();
 		list.add(song);
-		Mockito.
-		Mockito.when(musicDao.listAllSongsBySpec(Matchers.any()).thenReturn(list);
-		List<Song> allSongs = musicManager.listAllSongs();
+		Mockito.when(musicDao.listAllSongsBySpec((SongSpec)Matchers.any())).thenReturn(list);
+		SongSpec spec = new SongSpec();
+		List<Song> allSongs = musicManager.listAllSongsBySpec(spec);
 		assertNotNull(allSongs);
 	}
 }
