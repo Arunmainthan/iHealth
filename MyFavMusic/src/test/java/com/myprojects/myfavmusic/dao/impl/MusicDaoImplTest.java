@@ -22,8 +22,8 @@ public class MusicDaoImplTest extends TestCase {
 	
 	@Autowired
 	private MusicDao musicDao;
+	
 	@Test
-	@Transactional
 	public void testAddSong() {
 		Album album = new Album("album1","movie",2009);
 		Singer singer = new Singer("singer 1",new Date());
@@ -31,9 +31,4 @@ public class MusicDaoImplTest extends TestCase {
 		musicDao.addSong(song);
 		assertTrue(true);
 	}
-
-	public void testListAllSongsBySpec() {
-		fail("Not yet implemented");
-	}
-
 }

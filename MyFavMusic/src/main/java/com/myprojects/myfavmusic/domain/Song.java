@@ -1,6 +1,7 @@
 package com.myprojects.myfavmusic.domain;
 
 import java.io.Serializable;
+import static javax.persistence.GenerationType.IDENTITY;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -9,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 /**
  * @author arun 
@@ -17,10 +19,11 @@ import javax.persistence.ManyToOne;
  * Album and Singer
  */
 @Entity
+@Table(name="Song", catalog="myFavMusic")
 public class Song implements Serializable {
 	
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = IDENTITY)
 	private Integer id;
 	
 	public Song(){
