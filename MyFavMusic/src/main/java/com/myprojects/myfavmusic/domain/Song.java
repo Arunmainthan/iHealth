@@ -39,12 +39,10 @@ public class Song implements Serializable {
 
 	private String Title;
 	
-	@ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
-	@JoinColumn(name = "ALBUM_ID", nullable = false)
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private Album album;
 	
 	@ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
-	@JoinColumn(name = "SINGER_ID", nullable = false)
 	private Singer singer;
 	
 	private Integer rating;

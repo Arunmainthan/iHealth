@@ -18,7 +18,7 @@ import com.myprojects.myfavmusic.domain.Song;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={"file:src/test/resources/ApplicationContext-unitFav.xml"})
-public class MusicDaoImplTest extends TestCase {
+public class MusicDaoImplTest{
 	
 	@Autowired
 	private MusicDao musicDao;
@@ -29,6 +29,13 @@ public class MusicDaoImplTest extends TestCase {
 		Singer singer = new Singer("singer 1",new Date());
 		Song song = new Song("song 1",album,singer,0);
 		musicDao.addSong(song);
-		assertTrue(true);
+	}
+	
+	@Test
+	public void testListAllSongsByAlbum() {
+		Album album = new Album("album1","movie",2009);
+		Singer singer = new Singer("singer 1",new Date());
+		Song song = new Song("song 1",album,singer,0);
+		musicDao.addSong(song);
 	}
 }

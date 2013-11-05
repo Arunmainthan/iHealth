@@ -23,6 +23,25 @@ public class Singer {
 	@GeneratedValue
 	@Column(name = "SINGER_ID", unique = true, nullable = false, length = 20)
 	private Integer id;
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	public String getSingerName() {
+		return singerName;
+	}
+	public void setSingerName(String singerName) {
+		this.singerName = singerName;
+	}
+	public Date getDob() {
+		return dob;
+	}
+	public void setDob(Date dob) {
+		this.dob = dob;
+	}
+
 	private String singerName;
 	private Date dob;
 }
