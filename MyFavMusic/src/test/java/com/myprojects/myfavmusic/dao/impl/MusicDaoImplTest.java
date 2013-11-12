@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.Assert;
 
 import com.myprojects.myfavmusic.dao.MusicDao;
 import com.myprojects.myfavmusic.domain.Album;
@@ -25,17 +26,36 @@ public class MusicDaoImplTest{
 	
 	@Test
 	public void testAddSong() {
-		Album album = new Album("album1","movie",2009);
-		Singer singer = new Singer("singer 1",new Date());
-		Song song = new Song("song 1",album,singer,0);
+		Album album = musicDao.getAlbumByTitle("album1");
+		if (album == null) {
+			album = new Album("album1","movie",2009);
+		}
+		Assert.notNull(album);
+		
+		Singer singer = musicDao.getSingerByName("singer 1");
+		if (singer == null) {
+			singer = new Singer("singer 1",new Date());
+		}
+		Assert.notNull(singer);
+		
+		Song song = new Song("song " + Math.random() * 100,album,singer,0);
 		musicDao.addSong(song);
 	}
 	
 	@Test
 	public void testListAllSongsByAlbum() {
-		Album album = new Album("album1","movie",2009);
-		Singer singer = new Singer("singer 1",new Date());
-		Song song = new Song("song 1",album,singer,0);
-		musicDao.addSong(song);
+		Album album = musicDao.getAlbumByTitle("album1");
+		if (album == null) {
+			album = new Album("album1","movie",2009);
+			musicDao.addAlbum(album);
+		}
+		Assert.notNull(album);
+		Assert.isTrue(album.getSongs().size()>0);
 	}
+	
+//	@Test
+//	public void testGetSongByID(){
+//		Song song = musicDao.getSongByID(1);
+//		Assert.notNull(song);
+//	}
 }

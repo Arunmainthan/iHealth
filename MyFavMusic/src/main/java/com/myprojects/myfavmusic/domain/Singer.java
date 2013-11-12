@@ -13,6 +13,9 @@ import javax.persistence.Id;
 @Entity
 public class Singer {
 	
+	public Singer() {
+		super();
+	}
 	public Singer(String singerName, Date dob) {
 		super();
 		this.singerName = singerName;

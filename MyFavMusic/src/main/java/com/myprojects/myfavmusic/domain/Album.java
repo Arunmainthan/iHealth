@@ -17,6 +17,10 @@ import javax.persistence.OneToMany;
 @Entity
 public class Album implements Serializable {
 	
+	public Album() {
+		super();
+	}
+
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "album")
 	private List<Song> songs = null;
 	
