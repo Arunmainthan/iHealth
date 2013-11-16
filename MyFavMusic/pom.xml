@@ -81,6 +81,13 @@
 			<artifactId>javassist</artifactId>
 			<version>3.4.GA</version>
 		</dependency>
+		<!-- Struts Start -->
+		<dependency>
+			<groupId>org.apache.struts</groupId>
+			<artifactId>struts2-core</artifactId>
+			<version>2.3.1.2</version>
+		</dependency>
+		<!-- Struts end -->
 
 	</dependencies>
 	<build>
