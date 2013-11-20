@@ -36,16 +36,21 @@
 	<bean
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="location">
-			<value>file:src/test/resources/config/database-unitFav.properties
-			</value>
+			<value>/WEB-INF/database.properties</value>
 		</property>
 	</bean>
 	<bean id="musicDao" class="com.myprojects.myfavmusic.dao.impl.MusicDaoImpl"
 		autowire="byName">
 	</bean>
+	
 	<bean id="musicManager" class="com.myprojects.myfavmusic.bo.impl.MusicManagerImpl"
 		autowire="byType">
 	</bean>
+	
+	<bean id="homeAction" class="com.myprojects.myfavmusic.action.HomeAction"
+		autowire="byName">
+	</bean>
+	
 	<tx:annotation-driven transaction-manager="transactionManager"/>
 	<bean id="transactionManager"
 		class="org.springframework.orm.hibernate3.HibernateTransactionManager">

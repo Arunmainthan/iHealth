@@ -4,12 +4,15 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import junit.framework.TestCase;
-
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.mockito.Matchers;
 import org.mockito.Mockito;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.util.Assert;
 
-import com.myprojects.myfavmusic.bo.impl.MusicManagerImpl;
 import com.myprojects.myfavmusic.dao.MusicDao;
 import com.myprojects.myfavmusic.domain.Album;
 import com.myprojects.myfavmusic.domain.Singer;
@@ -19,29 +22,21 @@ import com.myprojects.myfavmusic.domain.SongSpec;
 /**
  * @author arun Unit Test for manager
  */
-public class MusicManagerTest extends TestCase {
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations={"file:src/test/resources/ApplicationContext-unitFav.xml"})
+public class MusicManagerTest{
 
-	MusicManagerImpl musicManager = new MusicManagerImpl();
-	MusicDao musicDao = Mockito.mock(MusicDao.class);
+	@Autowired
+	private MusicManager musicManager;
+	
+	//MusicDao musicDao = Mockito.mock(MusicDao.class);
 
-	@Override
-	public void setUp() {
-		musicManager.setMusicDao(musicDao);
-	}
-
-	public void testAddSong() {
-		fail("Not yet implemented");
-	}
-
-	public void testListAllSongsBySpec() {
+	@Test
+	public void testListAllSongs() {
 		List<Song> list = new ArrayList<Song>();
-		Album album = new Album("album1","movie",2009);
-		Singer singer = new Singer("singer 1",new Date());
-		Song song = new Song("song 1",album,singer,0);
-		list.add(song);
-		Mockito.when(musicDao.listAllSongsBySpec((SongSpec)Matchers.any())).thenReturn(list);
-		SongSpec spec = new SongSpec();
-		List<Song> allSongs = musicManager.listAllSongsBySpec(spec);
-		assertNotNull(allSongs);
+		//Mockito.when(musicDao.listAllSongsBySpec((SongSpec)Matchers.any())).thenReturn(list);
+		List<Song> allSongs = musicManager.listAllSongs();
+		Assert.notNull(allSongs);
+		Assert.isTrue(allSongs.size() >0);
 	}
 }

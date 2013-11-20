@@ -18,6 +18,14 @@ public class MusicDaoImpl implements MusicDao {
 	@Autowired
 	private SessionFactory sessionFactory;
 
+	public SessionFactory getSessionFactory() {
+		return sessionFactory;
+	}
+
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+
 	@Transactional
 	@Override
 	public void addSong(Song song) {
@@ -75,5 +83,15 @@ public class MusicDaoImpl implements MusicDao {
 	public void addAlbum(Album album) {
 		sessionFactory.getCurrentSession().save(album);
 		
+	}
+
+	@Transactional
+	@Override
+	public List<Song> listAllSongs() {
+		// TODO Auto-generated method stub
+		Query query = sessionFactory.getCurrentSession().createQuery(
+				"from Song");
+		List<Song> list = (List<Song>)query.list();
+		return list;
 	}
 }

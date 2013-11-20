@@ -1,6 +1,7 @@
 package com.myprojects.myfavmusic.dao.impl;
 
 import java.util.Date;
+import java.util.List;
 
 import junit.framework.TestCase;
 
@@ -51,6 +52,14 @@ public class MusicDaoImplTest{
 		}
 		Assert.notNull(album);
 		Assert.isTrue(album.getSongs().size()>0);
+	}
+	
+	@Test
+	public void testListAllSongs() {
+		List<Song> songs = musicDao.listAllSongs();
+
+		Assert.notNull(songs);
+		Assert.isTrue(songs.size()>0);
 	}
 	
 //	@Test

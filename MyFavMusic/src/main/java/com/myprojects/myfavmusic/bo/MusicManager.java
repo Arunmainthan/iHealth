@@ -14,4 +14,5 @@ import com.myprojects.myfavmusic.domain.SongSpec;
 public interface MusicManager {
 	public void addSong(Song song);
 	public List<Song> listAllSongsBySpec(SongSpec spec);
+	public List<Song> listAllSongs();
 }
