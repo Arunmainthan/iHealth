@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.myprojects.myfavmusic.bo.MusicManager;
 import com.myprojects.myfavmusic.dao.MusicDao;
+import com.myprojects.myfavmusic.domain.Album;
 import com.myprojects.myfavmusic.domain.Song;
 import com.myprojects.myfavmusic.domain.SongSpec;
 
@@ -37,4 +38,20 @@ public class MusicManagerImpl implements MusicManager {
 		List<Song> songs = musicDao.listAllSongs();
 		return songs;
 	}
+
+        @Override
+        public Album getAlbumByID(int albumID) {
+                // TODO Auto-generated method stub
+                return musicDao.getAlbumByID(albumID);
+        }
+
+        @Override
+        public void addAlbum(String albumName) {
+                // TODO Auto-generated method stub
+                Album album = musicDao.getAlbumByTitle(albumName);
+                if (album == null) {
+                        album = new Album("album1","movie",2009);
+                        musicDao.addAlbum(album);
+                }
+        }
 }

@@ -8,5 +8,13 @@
 		<action name="welcome" class="homeAction" method="displayAllSongs">
 			<result name="SUCCESS">/home.jsp</result>
 		</action>
+		<action name="album" class="homeAction" method="displayAllSongsFromAlbum">
+			<result name="SUCCESS">/home.jsp</result>
+		</action>
+		<action name="addAlbum" class="homeAction" method="addAlbum">
+			<result name="DISPLAY_ADD_PAGE">/addAlbum.jsp</result>
+			<result name="ADD_SUCCESS">/addSuccess.jsp</result>
+			<result name="ALREADY_EXISTS">/alreadyExists.jsp</result>
+		</action>
 	</package>
 </struts>

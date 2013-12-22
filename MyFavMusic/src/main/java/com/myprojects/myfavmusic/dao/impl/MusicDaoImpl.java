@@ -38,12 +38,6 @@ public class MusicDaoImpl implements MusicDao {
 		return null;
 	}
 	
-//	@Transactional
-//	@Override
-//	public List<Song> listAllSongsByAlbum(Album album) {
-//		return album.getSongs();
-//	}
-	
 	@Transactional
 	@Override
 	public Song getSongByID(Integer id) {
@@ -82,7 +76,6 @@ public class MusicDaoImpl implements MusicDao {
 	@Override
 	public void addAlbum(Album album) {
 		sessionFactory.getCurrentSession().save(album);
-		
 	}
 
 	@Transactional

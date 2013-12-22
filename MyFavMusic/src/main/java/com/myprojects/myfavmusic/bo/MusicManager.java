@@ -15,4 +15,6 @@ public interface MusicManager {
 	public void addSong(Song song);
 	public List<Song> listAllSongsBySpec(SongSpec spec);
 	public List<Song> listAllSongs();
+        public Album getAlbumByID(int albumID);
+        public void addAlbum(String albumName);
 }
