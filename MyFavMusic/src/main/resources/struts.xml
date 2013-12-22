@@ -16,5 +16,11 @@
 			<result name="ADD_SUCCESS">/addSuccess.jsp</result>
 			<result name="ALREADY_EXISTS">/alreadyExists.jsp</result>
 		</action>
+		
+		<action name="addSong" class="homeAction" method="addSong">
+			<result name="DISPLAY_ADD_PAGE">/addSong.jsp</result>
+			<result name="ADD_SUCCESS">/addSuccess.jsp</result>
+			<result name="ALREADY_EXISTS">/alreadyExists.jsp</result>
+		</action>
 	</package>
 </struts>

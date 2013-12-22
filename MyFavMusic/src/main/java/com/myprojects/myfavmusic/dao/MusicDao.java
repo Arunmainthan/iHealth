@@ -12,28 +12,36 @@ import com.myprojects.myfavmusic.domain.SongSpec;
  */
 public interface MusicDao {
 
-	/**
-	 * @param song
-	 *            - song to be added
-	 */
+        /**
+         * @param song
+         *                - song to be added
+         */
 
-	public void addSong(Song song);
-	
-	public void addAlbum(Album album);
+        public void addSong(Song song);
 
-	/**
-	 * @param spec
-	 * @return list of songs matching the search criteria
-	 */
-	public List<Song> listAllSongsBySpec(SongSpec spec);
-	
-	public List<Song> listAllSongs();
+        public void addAlbum(Album album);
 
-	public Song getSongByID(Integer id);
+        /**
+         * @param spec
+         * @return list of songs matching the search criteria
+         */
+        public List<Song> listAllSongsBySpec(SongSpec spec);
 
-	public Album getAlbumByID(Integer id);
-	
-	public Album getAlbumByTitle(String title);
-	
-	public Singer getSingerByName(String name);
+        public List<Song> listAllSongs();
+
+        public Song getSongByID(Integer id);
+
+        public Album getAlbumByID(Integer id);
+
+        public Album getAlbumByTitle(String title);
+
+        public Singer getSingerByName(String name);
+
+        public Song getSongByTitle(String songTitle);
+
+        public Singer getSingerByID(int singerID);
+
+        public List<Album> listAllAlbums();
+
+        public List<Singer> listAllSingers();
 }

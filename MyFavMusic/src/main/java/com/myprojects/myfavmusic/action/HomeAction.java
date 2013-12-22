@@ -8,6 +8,7 @@ import org.apache.struts2.interceptor.ServletRequestAware;
 
 import com.myprojects.myfavmusic.bo.MusicManager;
 import com.myprojects.myfavmusic.domain.Album;
+import com.myprojects.myfavmusic.domain.Singer;
 import com.myprojects.myfavmusic.domain.Song;
 
 public class HomeAction implements ServletRequestAware {
@@ -15,6 +16,25 @@ public class HomeAction implements ServletRequestAware {
         HttpServletRequest request;
 
         private List<Song> allSongs;
+        
+        public List<Singer> getAllSingers() {
+                return allSingers;
+        }
+
+        public void setAllSingers(List<Singer> allSingers) {
+                this.allSingers = allSingers;
+        }
+
+        public List<Album> getAllAlbums() {
+                return allAlbums;
+        }
+
+        public void setAllAlbums(List<Album> allAlbums) {
+                this.allAlbums = allAlbums;
+        }
+
+        private List<Singer> allSingers;
+        private List<Album> allAlbums;
 
         public List<Song> getAllSongs() {
                 return allSongs;
@@ -46,6 +66,29 @@ public class HomeAction implements ServletRequestAware {
                 if (request.getParameterMap().containsKey("albumName")) {
                         try {
                                 musicManager.addAlbum(request.getParameter("albumName"));
+                                return "ADD_SUCCESS";
+                        } catch(Exception ex){
+                                return "ALREADY_EXISTS";
+                        }
+                } else {
+                        return "DISPLAY_ADD_PAGE";
+                }
+
+        }
+        
+        public String addSong() {
+                // allSongs = musicManager.listAllSongs();
+                if (request.getParameterMap().containsKey("songTitle")) {
+                        String songTitle = request.getParameter("songTitle");
+                        String rating = request.getParameter("rating");
+                        int albumID = Integer.parseInt(request.getParameter("albumID"));
+                        int singerID = Integer.parseInt(request.getParameter("singerID"));
+                        
+                        allAlbums = musicManager.listAllAlbums();
+                        allSingers = musicManager.listAllSingers();
+                       
+                        try {
+                                musicManager.addSong(songTitle, rating, albumID, singerID);
                                 return "ADD_SUCCESS";
                         } catch(Exception ex){
                                 return "ALREADY_EXISTS";
