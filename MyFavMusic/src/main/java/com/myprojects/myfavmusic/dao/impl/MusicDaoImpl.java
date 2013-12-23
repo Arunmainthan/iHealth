@@ -119,6 +119,7 @@ public class MusicDaoImpl implements MusicDao {
                 return list;
         }
 
+        @Transactional
         @Override
         public List<Singer> listAllSingers() {
                 // TODO Auto-generated method stub

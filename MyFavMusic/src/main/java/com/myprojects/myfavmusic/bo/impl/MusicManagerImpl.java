@@ -1,6 +1,8 @@
 package com.myprojects.myfavmusic.bo.impl;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -77,14 +79,31 @@ public class MusicManagerImpl implements MusicManager {
         }
 
         @Override
-        public List<Album> listAllAlbums() {
+        public Map<String,String> listAllAlbumsAsMap() {
                 // TODO Auto-generated method stub
-                return musicDao.listAllAlbums();
+                List<Album> albums = musicDao.listAllAlbums();
+                
+                Map<String, String> albumsMap = new HashMap<String,String>();
+                for (Album album : albums) {
+                        albumsMap.put(album.getId().toString(), album.getTitle());
+                }
+                return albumsMap;
         }
 
         @Override
         public List<Singer> listAllSingers() {
                 // TODO Auto-generated method stub
                 return musicDao.listAllSingers();
+        }
+
+        @Override
+        public Map<String, String> listAllSingersAsMap() {
+                // TODO Auto-generated method stub
+                List<Singer> allSingers = musicDao.listAllSingers();
+                Map<String, String> singersMap = new HashMap<String,String>();
+                for (Singer singer : allSingers) {
+                        singersMap.put(singer.getId().toString(), singer.getSingerName());
+                }
+                return singersMap;
         }
 }

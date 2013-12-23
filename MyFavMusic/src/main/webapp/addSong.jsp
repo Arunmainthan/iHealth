@@ -8,8 +8,8 @@
    <s:form action="addSong" method="post">
    		Song Name<s:textfield name="songTitle"/>
    		Rating<s:textfield name="rating"/>
-   		Album ID<s:textfield name="albumID"/>
-   		singerID<s:textfield name="singerID"/>
+   		Album <s:select list="allAlbums"></s:select>
+   		singer <s:select list="allSingers"></s:select>
    		<s:submit value="submit"/>
    </s:form>
 </body>

@@ -1,6 +1,7 @@
 package com.myprojects.myfavmusic.bo;
 
 import java.util.List;
+import java.util.Map;
 
 import com.myprojects.myfavmusic.domain.Album;
 import com.myprojects.myfavmusic.domain.Singer;
@@ -26,7 +27,9 @@ public interface MusicManager {
         public void addSong(String songTitle, String rating, int albumID,
                         int singerID);
 
-        public List<Album> listAllAlbums();
-
         public List<Singer> listAllSingers();
+
+        Map<String, String> listAllAlbumsAsMap();
+
+        public Map<String, String> listAllSingersAsMap();
 }

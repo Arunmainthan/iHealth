@@ -1,6 +1,7 @@
 package com.myprojects.myfavmusic.action;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -12,30 +13,33 @@ import com.myprojects.myfavmusic.domain.Singer;
 import com.myprojects.myfavmusic.domain.Song;
 
 public class HomeAction implements ServletRequestAware {
+        
+        private MusicManager musicManager;
 
         HttpServletRequest request;
 
         private List<Song> allSongs;
         
-        public List<Singer> getAllSingers() {
+        private Map<String,String> allSingers;
+        
+        public Map<String, String> getAllSingers() {
                 return allSingers;
         }
 
-        public void setAllSingers(List<Singer> allSingers) {
+        public void setAllSingers(Map<String, String> allSingers) {
                 this.allSingers = allSingers;
         }
 
-        public List<Album> getAllAlbums() {
+        public Map<String, String> getAllAlbums() {
                 return allAlbums;
         }
 
-        public void setAllAlbums(List<Album> allAlbums) {
+        public void setAllAlbums(Map<String, String> allAlbums) {
                 this.allAlbums = allAlbums;
         }
 
-        private List<Singer> allSingers;
-        private List<Album> allAlbums;
-
+        private Map<String, String> allAlbums;
+        
         public List<Song> getAllSongs() {
                 return allSongs;
         }
@@ -44,7 +48,6 @@ public class HomeAction implements ServletRequestAware {
                 this.allSongs = allSongs;
         }
 
-        private MusicManager musicManager;
 
         public MusicManager getMusicManager() {
                 return musicManager;
@@ -84,9 +87,6 @@ public class HomeAction implements ServletRequestAware {
                         int albumID = Integer.parseInt(request.getParameter("albumID"));
                         int singerID = Integer.parseInt(request.getParameter("singerID"));
                         
-                        allAlbums = musicManager.listAllAlbums();
-                        allSingers = musicManager.listAllSingers();
-                       
                         try {
                                 musicManager.addSong(songTitle, rating, albumID, singerID);
                                 return "ADD_SUCCESS";
@@ -94,6 +94,8 @@ public class HomeAction implements ServletRequestAware {
                                 return "ALREADY_EXISTS";
                         }
                 } else {
+                        allAlbums = musicManager.listAllAlbumsAsMap();
+                        allSingers = musicManager.listAllSingersAsMap();
                         return "DISPLAY_ADD_PAGE";
                 }
 
