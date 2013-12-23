@@ -22,8 +22,6 @@ public interface MusicManager {
 
         public void addAlbum(String albumName);
 
-        void addSong(String songTitle);
-
         public void addSong(String songTitle, String rating, int albumID,
                         int singerID);
 

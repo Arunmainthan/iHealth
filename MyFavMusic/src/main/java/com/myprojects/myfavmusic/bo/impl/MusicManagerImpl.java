@@ -54,15 +54,9 @@ public class MusicManagerImpl implements MusicManager {
                 // TODO Auto-generated method stub
                 Album album = musicDao.getAlbumByTitle(albumName);
                 if (album == null) {
-                        album = new Album("album1","movie",2009);
+                        album = new Album(albumName,"movie",2009);
                         musicDao.addAlbum(album);
                 }
-        }
-
-        @Override
-        public void addSong(String songTitle) {
-                // TODO Auto-generated method stub
-                
         }
 
         @Override

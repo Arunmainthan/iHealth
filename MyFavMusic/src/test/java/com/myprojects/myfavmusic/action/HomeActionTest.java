@@ -51,5 +51,24 @@ public class HomeActionTest {
                 Assert.isTrue(results.equals("ADD_SUCCESS"));
                 //fail("Not yet implemented");
         }
+        
+        @Test
+        public void testAddAlbum() {
+                homeAction.setServletRequest(request);
+                homeAction.setMusicManager(musicManager);
+                String albumName = "New Album " + Math.random()*100;
+                
+                
+                Map<String, String[]> parameterMapDummy = new HashMap<String, String[]>();
+                parameterMapDummy.put("albumName", null);
+                
+                Mockito.when(request.getParameterMap()).thenReturn(parameterMapDummy);
+                
+                Mockito.when(request.getParameter("albumName")).thenReturn(albumName);
+                
+                String results = homeAction.addAlbum();
+                Assert.isTrue(results.equals("ADD_SUCCESS"));
+                //fail("Not yet implemented");
+        }
 
 }
