@@ -53,6 +53,17 @@ public class NewsController {
         return "success";
     }
     
+    @RequestMapping(method=RequestMethod.GET, value="news.html")
+    public String showNewspage(HttpServletRequest request) {
+            HttpSession session = request.getSession();
+            Users user = (Users) session.getAttribute("login");
+            if (user == null) {
+                    return "login";
+            } else {
+                    return "news";
+            }
+    }
+    
     @RequestMapping(method = RequestMethod.GET, value = "count.html")
     public String setCount(@RequestParam("c")String count, HttpServletRequest request) {
         int cnt = Integer.parseInt(count);

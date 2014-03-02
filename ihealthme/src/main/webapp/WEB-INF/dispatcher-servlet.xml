@@ -30,7 +30,6 @@
                 <prop key="about.html">aboutController</prop>
                 <prop key="login.html">loginController</prop>
                 <prop key="signup.html">signupController</prop>
-                <prop key="news.html">newsController</prop>
             </props>
         </property>
     </bean>
@@ -55,8 +54,4 @@
     <bean name="signupController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="signup" />
-    <bean name="newsController"
-          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
-          p:viewName="news" />
-
 </beans>
