@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context antiJARLocking="true" path="/NewsFeeds">
+    <Resource auth="Container" 
+              driverClassName="com.mysql.jdbc.Driver" 
+              maxActive="50" 
+              maxAge="10000" 
+              maxIdle="10" 
+              maxWait="100000" 
+              name="jdbc/newsfeed" 
+              password="123456" 
+              testOnBorrow="true" 
+              type="javax.sql.DataSource" 
+              url="jdbc:mysql://localhost:3306/iHealthMe?autoReconnect=true" 
+              username="root" 
+              validationQuery="SELECT 1"/>
+</Context>
