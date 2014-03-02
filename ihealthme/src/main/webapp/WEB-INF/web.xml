@@ -10,6 +10,10 @@
         <param-name>FBID</param-name>
         <param-value>528448010601193</param-value>
     </context-param>
+    <error-page>
+        <error-code>400</error-code>
+        <location>/WEB-INF/jsp/login.jsp</location>
+    </error-page>
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
